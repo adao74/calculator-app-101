@@ -1,5 +1,59 @@
 body {
   margin: 20% auto;
-  width: 50%;
   height: 75%;
+  
+  width: 300pt;
+}
+
+main {
+  background-color: lightblue;
+}
+
+#result {
+  height: 20pt;
+  background-color: rgb(243, 106, 129);
+  padding: 20pt;
+}
+
+form {
+  width: 100%;
+}
+
+.number-container {
+  border: rgb(20, 106, 219) 2pt solid;
+  display: grid;
+  grid-template-areas: 'one two'
+                        'three four';
+  height: 60pt;
+  padding: 10pt;
+  background-color: rgb(184, 235, 231);
+}
+
+.number-container * {
+  margin: 2pt 8pt;
+  align-content: center;
+  /* text-align: center; */
+} 
+
+.operation-container {
+  display: grid;
+  grid-template-areas: 'one two'
+                      'three four'
+                      'five . ';
+  margin: 10pt;
+}
+
+.operation-container button {
+  margin: 2pt;
+  height: 30pt;
+}
+
+.finish {
+  padding: 10pt;
+}
+
+.finish button {
+  margin: 2pt;
+  height: 20pt;
+  width: 70pt;
 }
