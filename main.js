@@ -32,14 +32,21 @@ const subtract = (numA, numB) => {
 const multiply = (numA, numB) => {
   // * to get a product then return it
   // Open up the inspector tool in Chrome and select the Console tab to see what this functions is "logging out" to the console.
-  console.log(numA, numB)
+  const product = numA * numB
+  return product
 }
 
-const divide = null
+const divide = (numA, numB) => {
 // / to get a quotient,
+  const quotient = numA / numB
+  return quotient
+}
 
-const modulus = null
+const modulus = (numA, numB) => {
 // and % to get a remainder.
+  const remainder = numA % numB
+  return remainder 
+}
 
 // This function changes the "operation" variable to be equal to the "id" of the button we choose on the web page.
 const changeOperation = (chosenOperation) => {
@@ -55,20 +62,29 @@ const putResultInElement = (operationResults) => {
 
   // Remember, each element has built in properties like "innerHTML" which we can change to anything we like. 
   // Here we give it a string: "Results: " and add the value of the operation to it.
+
+
+  // NOTE TO SELF:
+  // You could already have Results as innerHTML that is always rendered on the page (already in the html file), and then append operationResults to it
+  // e.g. <div id="result">Results: </div>
+  // let text = document.createTextNode(operationResults)
+  // document.getElementById("result").appendChild(text)
 }
 
 // The function uses the value of "operation" variable to determine which operation function it should use on the number: add, subtract, multiply, divide, or modulus
+// We can use operation, firstNum, and secondNum after we saved them because these variables have global scope 
 const equals = () => {
   switch (operation) {
     case "addition":  putResultInElement(add(firstNum, secondNum)) 
     break;
     case "subtraction": putResultInElement(subtract(firstNum, secondNum)) 
     break;
-    case "multiplication": multiply(firstNum, secondNum) 
+    // If wanted to log in console instead, do console.log(multiply(firstNum, secondNum))
+    case "multiplication": putResultInElement(multiply(firstNum, secondNum))
     break;
-    case "division": console.log(divide(firstNum, secondNum)) 
+    case "division": putResultInElement(divide(firstNum, secondNum)) 
     break;
-    case "modulus": console.log(modulus(firstNum, secondNum)) 
+    case "modulus": putResultInElement(modulus(firstNum, secondNum)) 
     break;
     default: "Choose an operation"
   }
